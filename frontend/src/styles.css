@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+
+*{
+    box-sizing: border-box;
+}
+html{
+font_size :16px ; 
+
+}
+html,button{
+    font-family :"Inconsolata","sans-serif";
+}
+
+a
+{
+    text-decoration: none;
+}
+.origins{
+    flex:9;
+}
+.origins span{
+
+border-radius: 2rem;
+background:whitesmoke;
+display:inline-block;
+color:gray;
+margin-right :0.3rem;
+
+    
+}
+
+.cook-time {
+
+    font-size :0.9rem;
+    flex:3;
+    text-align: right;
+}
+
+.price {
+    position:absolute;
+    bottom:0;
+    left: 0.9rem;
+    background: white;
+    padding:0.3rem 100% 0 0;
+    color: #414141;
+    margin-top: 0.7rem;
+    font-size: 1.1rem;
+}
+
+.product-item-footer{
+    padding: 1rem;
+    display:flex
+}

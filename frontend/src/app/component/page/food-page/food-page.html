@@ -1,0 +1,35 @@
+<app-notfound
+  [visible]="!loading() && !food()"
+  notFoundMessage="Food not found"
+  resetLinkText="Back to home"
+  resetLinkRoute="/"
+></app-notfound>
+
+<div class="container" *ngIf="food() as food">
+  <img [src]="food.imageUrl" [alt]="food.name">
+
+  <div class="details">
+
+    <div class="header">
+      <span class="name">{{ food.name }}</span>
+      <span class="favourite {{food.favorite ? '' : 'not' }}">❤</span>
+    </div>
+
+    <div class="origins">
+      <span *ngFor="let origin of food.origins">
+        {{ origin }}
+      </span>
+    </div>
+
+    <div class="tags">
+      <a *ngFor="let tag of food.tags" [routerLink]="['/tag', tag]">
+        {{ tag }}
+      </a>
+    </div>
+
+    <div class="price1">${{ food.price }}</div>
+
+    <button (click)="addToCard()">add to cart</button>
+
+  </div>
+</div>

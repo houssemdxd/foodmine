@@ -1,0 +1,35 @@
+<header>
+
+<div class="container">
+
+<a routerLink ="" class="logo">Food Mine !</a>
+<nav>
+<ul>
+
+    <li *ngIf="!user.name"><a routerLink="/login">Login</a></li>
+    <li class="menu-container"*ngIf="user.token">
+
+            <a routerLink="/dashboard">{{user.name}}</a>
+
+            <div class="menu" >
+                <a routerLink="/profile">Profile</a>
+             <a routerLink="/orders">Orders</a>
+             <a (click)="logout()">logout</a>
+
+
+            </div>
+
+    </li>
+    <li class = "card">
+            <a routerLink="/cart-page">cart <span>{{quantity}}</span></a>
+
+    </li>
+
+</ul>
+
+
+</nav>
+
+</div>
+
+</header>

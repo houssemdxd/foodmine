@@ -1,0 +1,105 @@
+header{
+
+    position :relative;
+    background-color: white;
+    padding :0;
+    border-bottom: 1px solid #e72929;
+}
+a{
+    color:#af1313;
+    text-decoration: none;
+}
+a:hover{
+    background: #e72929;
+    color:white;
+    cursor: pointer;
+}
+li:hover{
+height:100%;
+    background: #e72929;
+    color:white;
+    cursor: pointer;
+}  
+
+.container{
+    margin:0 auto; 
+    display:flex;
+    justify-content: space-between;
+}
+a.logo {
+    font-weight:  bold;
+    padding: 1rem;
+}
+ul{
+    display: flex;
+    justify-content:space-between;
+    list-style-type: none;
+    margin : 0;
+    gap:40px;
+}
+ul li {
+     width:100%;
+     margin : 0;
+
+}
+ul li :hover{
+     height:100%;
+     margin : 0;
+}
+ul a {
+    display : inline-block;
+   
+}
+a span{
+    background : #ff4D4D;
+    color:white;
+    padding :0.1rem 0.45rem;
+    border-radius : 100rem;
+    font-size :0.9rem;
+}
+.menu-container {
+    position :relative;
+
+ 
+}
+.menu{position:absolute;
+z-index: 1;
+background:whitesmoke;
+display:none;
+
+
+}
+.menu-container:hover .menu {
+    display: block;
+    min-width: 8rem;
+       display: flex;
+    flex-direction: column;
+
+}
+
+
+
+ul li a {
+    padding: 0.5rem;
+    flex: 1;
+
+}
+li:hover{
+    height:100%;
+    color: white !important;
+
+}
+ul li :last-child{
+        min-width: 5.5rem;
+
+
+}
+
+ul li a:hover {
+    background: #e72929;
+    color: white;
+}
+.card{
+    display: flex;
+    width:max-content;
+}
