@@ -14,8 +14,12 @@ dbConnect();
 const app = express();
 app.use(express.json());
 app.use(cors({credentials:true,
-    origin:["http://localhost:4200"]
+    origin:["http://localhost:4200","*"]
 }));
+app.use((req, res, next) => {
+  console.log("➡️ REQUEST:", req.method, req.url);
+  next();
+});
 app.use("/api/foods", foodRouter);
 app.use("/api/users",userRouter);
 
