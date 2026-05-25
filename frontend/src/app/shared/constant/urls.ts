@@ -10,6 +10,7 @@ export const FOOD_BY_TAG_URL=FOOD_URL+"/tag/";
 
 export const FOOD_By_ID_URL=FOOD_URL+"/";
 export const USER_LOGIN_URL =Base_url+"/api/users/login"
+export const USER_REGISTER_URL =Base_url+"/api/users/register"
 
 
 

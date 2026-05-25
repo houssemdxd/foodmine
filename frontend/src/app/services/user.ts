@@ -3,8 +3,9 @@ import { User } from '../shared/models/User';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { HttpClient } from '@angular/common/http';
-import { USER_LOGIN_URL } from '../shared/constant/urls';
+import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constant/urls';
 import { ToastrService } from 'ngx-toastr';
+import { IUserRegister } from '../shared/interfaces/IuserRegistre';
 
 @Injectable({
   providedIn: 'root',
@@ -55,7 +56,24 @@ if(userstring) return JSON.parse(userstring) as User;
 return new User(); 
  }
 
-
+ register(userRegiser:IUserRegister): Observable<User>{
+    return this.http.post<User>(USER_REGISTER_URL, userRegiser).pipe(
+      tap({
+        next: (user) => {
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastr.success(
+            `Welcome to the Foodmine ${user.name}`,
+            'Register Successful'
+          )
+        },
+        error: (errorResponse) => {
+          this.toastr.error(errorResponse.error,
+            'Register Failed')
+        }
+      })
+    )
+  }
 
 
  logout(){

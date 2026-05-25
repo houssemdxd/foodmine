@@ -11,8 +11,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideHttpClient(),
-    ReactiveFormsModule,
-      importProvidersFrom(ReactiveFormsModule),
+    importProvidersFrom(ReactiveFormsModule),
 
     provideAnimations(),
 provideToastr({

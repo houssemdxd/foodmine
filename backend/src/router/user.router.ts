@@ -26,15 +26,23 @@ router.get("/seed", async (req, res) => {
 
 
 
-router.post("/login",(req,res)=>{
-const {email,password} = req.body;
-const user = userModel.findOne({email});
-if(user){res.send(generateTokenRespone(user))}
-else{
-    res.status(400).send("User name or password is not valid")
-}
-;
-} );
+router.post("/login", asyncHandler(
+  async (req, res) => {
+    const {email, password} = req.body;
+    const user = await userModel.findOne({email});
+  
+     if(user && (await bcrypt.compare(password,user.password))) {
+      res.send(generateTokenRespone(user));
+     }
+     else{
+       res.status(400).send("Username or password is invalid!");
+     }
+  
+  }
+))
+
+
+
 router.post('/register', asyncHandler(
   async (req, res) => {
     const {name, email, password, address} = req.body;
