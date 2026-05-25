@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LoadingService } from '../../../services/loading';
 import { NgIf } from "@angular/common";
 
@@ -8,21 +8,7 @@ import { NgIf } from "@angular/common";
   templateUrl: './loading.html',
   styleUrl: './loading.css',
 })
-export class Loading implements OnInit{
+export class Loading {
 
-  isLoading!:boolean;
-
-  constructor(private loadingService: LoadingService) {
-
-    this.loadingService.isLoadingObservable.subscribe((isloading)=>{
-      this.isLoading = isloading;
-    })
-
-   }
-
-  ngOnInit(): void {
-
-  }
-
-
+  readonly isLoading = inject(LoadingService).isLoading;
 }
