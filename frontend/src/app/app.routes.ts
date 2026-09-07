@@ -4,6 +4,7 @@ import { FoodPage } from './component/page/food-page/food-page';
 import { CartPage } from './component/page/cart-page/cart-page';
 import { Login } from './component/page/login/login';
 import { RegisterPage } from './component/page/register-page/register-page';
+import { CheckoutPage } from './component/page/checkout-page/checkout-page';
 
 export const routes: Routes = [
     {path:"",component:Home},
@@ -12,5 +13,7 @@ export const routes: Routes = [
     {path:"tag/:tag",component:Home},
     {path:"cart-page",component:CartPage},
     {path:"login",component:Login},
-    {path:"register",component:RegisterPage}
+    {path:"register",component:RegisterPage},
+    {path:"order",component:CheckoutPage},
+
 ];

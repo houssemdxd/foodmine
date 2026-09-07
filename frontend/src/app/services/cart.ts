@@ -86,4 +86,10 @@ return cartJson?JSON.parse(cartJson) as Cart :new Cart();
 
 }
 
+
+getCart():Cart{
+return this.cartSubbject.value
+
+}
+
 }

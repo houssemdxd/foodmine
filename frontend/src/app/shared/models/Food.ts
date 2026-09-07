@@ -1,5 +1,6 @@
 export class  Food {
 id!:string ;
+_id?:string ;
 name! : string;
 price! :number;
 tags!:string[];

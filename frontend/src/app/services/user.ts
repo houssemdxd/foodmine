@@ -20,7 +20,9 @@ constructor(public http:HttpClient,private toastr:ToastrService) {
 this.userSubject.next(this.getUserFromLocalStorage());
 this.userObservable = this.userSubject.asObservable();
 }
-
+public get CurrentUser():User{
+  return this.userSubject.value;  
+}
 
 
 login(userLogin:IUserLogin):Observable<User>{
